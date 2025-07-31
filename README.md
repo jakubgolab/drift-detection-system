@@ -136,28 +136,51 @@ The system compares VAE with traditional methods:
 
 ## 📈 Evaluation Metrics
 
-The system calculates the following metrics:
-- **Accuracy** - overall correctness
-- **Precision** - positive predictive value
-- **Recall** - sensitivity
-- **F1-Score** - harmonic mean of precision and recall
-- **G-Mean** - geometric mean
-- **Detection Time** - computational performance
+The system evaluates drift detection performance using confusion matrix metrics and detection timing analysis:
+
+### Classification Metrics
+- **True Positives (TP)** - correctly detected drift occurrences
+- **False Positives (FP)** - incorrectly detected drifts (false alarms)
+- **True Negatives (TN)** - correctly identified stable periods 
+- **False Negatives (FN)** - missed drift occurrences
+
+### Detection Timing Metrics
+- **Detection Delays** - time lag between actual drift occurrence and detection (measured in windows)
 
 ## 📊 Results
 
 Experiment results are saved in the `results/` folder and include:
-- `metrics.pkl` - evaluation metrics
-- `results.pkl` - detailed detection results
+- `metrics.pkl` - evaluation metrics including TP, FP, TN, FN, accuracy, precision, recall, F1-score, G-mean, and detection timing
+- `results.pkl` - detailed detection results with detection timestamps and reconstruction errors
 - `drift_detection.log` - experiment logs
-- Charts visualizing detected drifts
+- Charts visualizing drift detection performance across different dataset groups
+
+### Analysis Categories
+The results are organized by dataset groups for comprehensive analysis:
+- **Splits** - composition drift scenarios (class splitting)
+- **Joins** - locality drift scenarios (class merging)  
+- **Moves** - locality drift scenarios (class movement)
+- **Borderlines** - borderline imbalance scenarios
+- **Imbalances** - various imbalance ratio scenarios
 
 ## 📓 Notebooks
 
 ### `final_results_explorer.ipynb`
-- Experiment results analysis
-- Detector comparison visualization
-- Report generation
+Comprehensive analysis notebook for drift detection results:
+
+**Features:**
+- **Dataset Group Selection** - filter analysis by drift type (Splits, Joins, Moves, Borderlines, Imbalances)
+- **Performance Metrics Visualization** - line plots and subplots for TP, FP, FN across models and datasets
+- **Model Comparison** - side-by-side comparison of all drift detectors
+- **Detection Delay Analysis** - visualization of detection timing performance
+- **Summary Statistics** - mean performance metrics across dataset groups
+- **Automated Plot Generation** - saves publication-ready PDF charts
+
+**Available Visualizations:**
+- True/False Positives/Negatives trends per dataset
+- Overall model comparison across metrics
+- Detection delay analysis
+- Individual model performance breakdown
 
 ## 🔬 Methodology
 
