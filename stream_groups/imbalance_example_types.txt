@@ -1,0 +1,12 @@
+Borderline100.arff
+Borderline20.arff
+Borderline20+Rare20.arff
+Borderline40.arff
+Borderline40+Rare40.arff
+Borderline60.arff
+Borderline80.arff
+Rare100.arff
+Rare20.arff
+Rare40.arff
+Rare60.arff
+Rare80.arff

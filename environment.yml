@@ -1,0 +1,17 @@
+name: ml_env
+channels:
+  - defaults
+  - pytorch
+  - conda-forge
+dependencies:
+  - python=3.10
+  - matplotlib
+  - numpy
+  - pandas
+  - scikit-learn
+  - scipy
+  - seaborn
+  - pytorch
+  - pip
+  - pip:
+      - river

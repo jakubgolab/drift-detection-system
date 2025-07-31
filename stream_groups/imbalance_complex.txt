@@ -1,0 +1,4 @@
+StaticIm10_Borderline20+Rare20.arff
+StaticIm10_Borderline40+Rare40.arff
+StaticIm10_Im1+Borderline20+Rare20.arff
+StaticIm10_Im1+Borderline40+Rare40.arff

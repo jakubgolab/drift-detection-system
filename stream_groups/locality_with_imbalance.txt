@@ -1,0 +1,12 @@
+StaticIm10_Join3.arff
+StaticIm10_Join5.arff
+StaticIm10_Join7.arff
+StaticIm10_Move3.arff
+StaticIm10_Move5.arff
+StaticIm10_Move7.arff
+StaticIm1_Join3.arff
+StaticIm1_Join5.arff
+StaticIm1_Join7.arff
+StaticIm1_Move3.arff
+StaticIm1_Move5.arff
+StaticIm1_Move7.arff
