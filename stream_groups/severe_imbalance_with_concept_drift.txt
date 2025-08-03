@@ -1,0 +1,5 @@
+Split5+Im1+Borderline40.arff
+Split5+Im1+Borderline40+Rare40.arff
+StaticIm10_Split5+Im1+Borderline40+Rare40
+StaticIm10_Split5+Rare40.arff
+StaticIm10_Split5+Borderline20+Rare20.arff

@@ -182,7 +182,8 @@ def plot_experiment_results(
         plt.subplot(2, 1, 1)
         for name, errors in results["reconstruction_errors"].items():
             if errors:
-                plt.plot(errors, label=f"{name} (średnie błędy w oknie {window_size})")
+                # plt.plot(errors, label=f"{name} (średnie błędy w oknie {window_size})")
+                plt.plot(errors, label=f"{name} (mean window-block error {window_size})")
 
         # Dodaj zacieniowane obszary dla przedziałów dryfu
         if drift_points:
@@ -194,7 +195,7 @@ def plot_experiment_results(
                     alpha=0.2,
                     color="red",
                     label=(
-                        f"Rzeczywisty dryf {start}-{end}"
+                        f"Real drift {start}-{end}"
                         if (start, end) == drift_points[0]
                         else ""
                     ),
@@ -204,9 +205,9 @@ def plot_experiment_results(
                 plt.axvline(x=start, color="r", linestyle="--", alpha=0.5)
                 plt.axvline(x=end, color="r", linestyle="--", alpha=0.5)
 
-        plt.title(f"Błędy rekonstrukcji - {stream_name}")
-        plt.xlabel("Próbka")
-        plt.ylabel("Średni błąd rekonstrukcji")
+        plt.title(f"Reconstruction errors - {stream_name}")
+        plt.xlabel("Sample")
+        plt.ylabel("Mean reconstruction error")
         plt.legend()
         plt.grid(True, alpha=0.3)
         xlim_1 = plt.xlim()
@@ -236,7 +237,7 @@ def plot_experiment_results(
                 alpha=0.2,
                 color="red",
                 label=(
-                    f"Przedział dryfu {start}-{end}"
+                    f"Drift interval {start}-{end}"
                     if (start, end) == drift_points[0]
                     else ""
                 ),
@@ -248,9 +249,9 @@ def plot_experiment_results(
 
     plt.yticks(range(len(detector_names)), detector_names)
     plt.xlim(xlim_1)
-    plt.title(f"Wykryte punkty dryfu - {stream_name}")
-    plt.xlabel("Próbka")
-    plt.ylabel("Detektor")
+    plt.title(f"Detected drift points - {stream_name}")
+    plt.xlabel("Sample")
+    plt.ylabel("Detector")
     plt.grid(True, alpha=0.3)
     plt.tight_layout()
 
